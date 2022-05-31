@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    font-family: 'Hind', sans-serif;
+}
+
+/* HEADER */
+header{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+#portNavbar .nav-item::after{
+content: '';
+width: 0;
+height: 3px;
+background-color: #35a22c;
+display: block;
+}
+#portNavbar .nav-item{
+    margin: 0 10px;
+}
+#portNavbar .nav-item:hover::after{
+width: 100%;
+transition: all 0.5s;
+}
+#portNavbar .active::after{
+width: 100%;
+}
+/* RESPONSIVE HEADER */
+@media screen and (max-width:992px){
+    header .navbar .navbar-toggler{
+        background-color: #35a22c;
+        color: white;
+    }
+    #portNavbar{
+        background: white;
+    }
+    #portNavbar .nav-link{
+        color: #35a22c;
+    }
+    #portNavbar .nav-item::after{
+        display: none;
+    }
+    #portNavbar .nav-item:hover{
+        background: #35a22c;
+    }
+    #portNavbar .nav-item:hover .nav-link{
+        color: white;
+    }
+    #portNavbar  .nav-item{
+        margin:0;
+        padding:0 10px;
+    }
+}
+
+
+
+/* CAROUSEL */
+#portCaptions .carousel-caption img{
+width: 140px;
+border-radius: 50%;
+}
+/* %:chỉ theo kích thước của cha gần nhất(để thẻ con không tràn khỏi nội dung cha , hiển thị phù hợp với cha) 
+vw(viewport width) &vh(viewport height) : theo kích thước khung trình duyệt(không quan tâm cha gần nhất) */
+
+.carousel-item>img{
+  height: 100vh;
+  object-fit: cover;
+}
+.carousel__overplay{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#portCaptions .carousel-caption{
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#portCaptions .carousel-indicators{
+    bottom: 40px;
+}
+#portCaptions .carousel-indicators li{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+#portCaptions .carousel-indicators .active{
+    background-color: #35a22c;
+}
+/* PROJECT */
+.project__content .nav{
+justify-content: center;
+}
+.project__content .card{
+    box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.13);
+}
+/* AWARD */
+.award{
+    padding: 70px 0;
+    color: #585858;
+    background-image: url(../img/memphis_3.png);
+    background-position:left bottom ;
+    background-repeat: no-repeat;
+    background-size: 50% auto;
+}
+.award__left{
+    padding: 40px;
+    border: 1px solid rgba(255, 255,255, 0.18);
+    background-color:  rgba(255, 255,255, 0.25);
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    backdrop-filter: blur(3px);
+}
